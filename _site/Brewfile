@@ -1,8 +1,0 @@
-tap "homebrew/bundle"
-tap "homebrew/core"
-tap "osx-cross/arm"
-tap "osx-cross/avr"
-tap "qmk/qmk"
-tap "yqrashawn/goku"
-brew "ruby"
-brew "qmk/qmk/qmk"
