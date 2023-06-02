@@ -13,4 +13,8 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jekyll-include-cache'
   gem 'minimal-mistakes-jekyll'
-end
+  gem 'jekyll-data'
+  end
+
+gem "github-pages", group: :jekyll_plugins
+gem "jekyll-include-cache", group: :jekyll_plugins

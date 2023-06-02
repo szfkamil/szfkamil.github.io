@@ -1,8 +1,16 @@
 collections:
 authors:
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-include-cache
+  - jekyll-data
+
+# Theme settings
+
+minimal_mistakes_skin: "default"
+# Site Settings
+
