@@ -1,15 +1,59 @@
----
-layout: default
-title: Home
----
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>{{ page.title }}</title>
-  </head>
-  <body>
-    <h1>{{ "Hello World!" | capitalize }}</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kamil Zwoiński — personal site</title>
+  <meta name="description" content="Personal site of Kamil Zwoiński, computer science student at the University of Gdańsk.">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <main class="page">
+
+    <header class="intro">
+      <p class="prompt"><span class="puser">guest</span>@<span class="phost">kamilzwoinski.com</span>:~$ <span class="cmd">whoami</span></p>
+      <h1>Kamil Zwoiński</h1>
+      <p class="tagline">Computer Science student — University of Gdańsk<span class="cursor" aria-hidden="true"></span></p>
+    </header>
+
+    <section>
+      <p class="prompt"><span class="puser">guest</span>@<span class="phost">kamilzwoinski.com</span>:~$ <span class="cmd">ls ~/projects</span></p>
+      <ul class="output list">
+        <li>
+          <a href="https://github.com/szfkamil/db-academic-library">db-academic-library</a>
+          <span class="desc">— relational database system, PostgreSQL</span>
+        </li>
+        <li>
+          <a href="https://github.com/szfkamil/programming-languages">programming-languages</a>
+          <span class="desc">— Python coursework: OOP, unit testing</span>
+        </li>
+        <li>
+          <a href="https://github.com/szfkamil">ergonomic keyboards</a>
+          <span class="desc">— QMK firmware in C, hardware builds &amp; debugging</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="prompt"><span class="puser">guest</span>@<span class="phost">kamilzwoinski.com</span>:~$ <span class="cmd">cat socials</span></p>
+      <ul class="output list">
+        <li><span class="label">github</span>   <a href="https://github.com/szfkamil">github.com/szfkamil</a></li>
+        <li><span class="label">linkedin</span> <a href="https://www.linkedin.com/in/kamil-zwoi%C5%84ski-9a5461229">linkedin.com/in/kamil-zwoiński</a></li>
+        <li><span class="label">email</span>    <a href="mailto:professional@kamilzwoinski.com">professional@kamilzwoinski.com</a></li>
+        <li><span class="label">discord</span>  <span class="muted">(add your handle)</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="prompt"><span class="puser">guest</span>@<span class="phost">kamilzwoinski.com</span>:~$ <span class="cmd">cat cv.pdf</span></p>
+      <p class="output">A one-page CV — <a href="assets/cv.pdf">download /assets/cv.pdf</a></p>
+    </section>
+
+    <footer>
+      <p class="prompt"><span class="puser">guest</span>@<span class="phost">kamilzwoinski.com</span>:~$ <span class="cmd">logout</span></p>
+      <p class="muted small">Built by hand with HTML &amp; SCSS. No framework.</p>
+    </footer>
+
+  </main>
+</body>
 </html>

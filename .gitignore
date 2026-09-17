@@ -1,0 +1,66 @@
+# ============================================================
+# Universal system junk (from ~/Misc/syncthing ignore lists)
+# ============================================================
+
+# ---- Linux: temp state, swap & lock files ----
+*.uuid
+.sw?
+.sw*
+.lck
+.lock
+*.bak
+*~
+
+# ---- Linux: desktop environments, office locks & downloads ----
+.Trash-*/
+.directory
+.fuse_hidden*
+.~lock.*#
+*.tmp
+.#*
+#*#
+*.part
+*.crdownload
+
+# ---- macOS: dotfiles & system metadata ----
+.DS_Store
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.metadata_never_index
+.apdisk
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+.icloud
+._*
+
+# ---- Android: system clutter & media caches ----
+.trashed*
+.gs*
+.thumbnails
+*.thumbnails
+.localized
+.nomedia
+*.iso
+.Trash
+.Trash-*/
+.pending-*
+.android_*
+.cache
+Android/data
+Android/obb
+
+# ============================================================
+# Project-specific
+# ============================================================
+
+# Build output / tooling
+node_modules/
+*.css.map
+
+# Private notes — never commit
+NOTES.md
