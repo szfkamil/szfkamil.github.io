@@ -15,16 +15,16 @@ Live: <https://kamilzwoinski.com>
 
 ## Projects list
 
-The project list shown in `index.html` (`ls ~/projects`) and on the GitHub profile README
-(`szfkamil/szfkamil`) is generated from `projects.json`:
+The project list shown in `index.html` (`ls ~/projects`) is generated from `projects.json`:
 
 ```sh
 python3 scripts/gen-projects.py
 ```
 
-This rewrites the `<!-- projects:start -->` block in `index.html` and writes `profile-README.md`
-to copy into `szfkamil/szfkamil/README.md`. The Pages workflow runs the generator before deploying,
-so the live site always matches `projects.json`. Details in `notes/projects.md`.
+This rewrites the `<!-- projects:start -->` block in `index.html`. The Pages workflow runs the
+generator before deploying, so the live site always matches `projects.json`. The GitHub profile
+README is static and lists no projects — the pinned repos are the profile's showcase.
+Details in `notes/projects.md`.
 
 ## Building the CSS
 

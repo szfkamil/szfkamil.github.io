@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Regenerate the project list on the website and the GitHub profile README.
+"""Regenerate the project list on the website.
 
-Single source of truth: projects.json.
+Single source of truth: projects.json. The GitHub profile README is static
+and shows no project list — the pinned repos are the profile's showcase.
 
 Usage:
     python3 scripts/gen-projects.py
 
 Writes:
-    index.html          — replaces the <!-- projects:start -->..<!-- projects:end --> block
-    profile-README.md   — full profile README for github.com/szfkamil/szfkamil (copy there)
+    index.html — replaces the <!-- projects:start -->..<!-- projects:end --> block
 """
 import html
 import json
@@ -18,7 +18,6 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "projects.json"
 INDEX = ROOT / "index.html"
-PROFILE = ROOT / "profile-README.md"
 
 START = "<!-- projects:start -->"
 END = "<!-- projects:end -->"
@@ -57,33 +56,11 @@ def render_index(projects):
     return head + html_block(projects) + rest
 
 
-def markdown_block(projects):
-    return "\n".join(
-        f"*   [**{p['name']}**]({p['url']}) \u2013 {p['description']}" for p in projects
-    )
-
-
-def render_profile(projects):
-    return (
-        "# Kamil Zwoi\u0144ski\n"
-        "\n"
-        "Computer Science student at the University of Gda\u0144sk.\n"
-        "\n"
-        "- **Website:** [kamilzwoinski.com](https://kamilzwoinski.com)\n"
-        "- **CV:** [kamilzwoinski.com/assets/cv.pdf](https://kamilzwoinski.com/assets/cv.pdf)\n"
-        "\n"
-        "## Projects\n"
-        "\n"
-        f"{markdown_block(projects)}\n"
-    )
-
-
 def main():
     projects = load_projects()
     INDEX.write_text(render_index(projects), encoding="utf-8")
-    PROFILE.write_text(render_profile(projects), encoding="utf-8")
     print(
-        f"wrote {INDEX.name} and {PROFILE.name} from {DATA.name} "
+        f"wrote {INDEX.name} from {DATA.name} "
         f"({len(projects)} project{'s' if len(projects) != 1 else ''})"
     )
 
