@@ -1,0 +1,19 @@
+{
+  "projects": [
+    {
+      "name": "db-academic-library",
+      "url": "https://github.com/szfkamil/db-academic-library",
+      "description": "relational database system, PostgreSQL"
+    },
+    {
+      "name": "programming-languages",
+      "url": "https://github.com/szfkamil/programming-languages",
+      "description": "Python coursework: OOP, unit testing"
+    },
+    {
+      "name": "szfkamil.github.io",
+      "url": "https://github.com/szfkamil/szfkamil.github.io",
+      "description": "this site — terminal-inspired HTML & SCSS"
+    }
+  ]
+}

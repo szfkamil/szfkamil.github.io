@@ -62,5 +62,8 @@ Android/obb
 node_modules/
 *.css.map
 
+# Generated profile README for github.com/szfkamil/szfkamil (copy there, don't commit here)
+profile-README.md
+
 # Private notes — never commit
 NOTES.md
