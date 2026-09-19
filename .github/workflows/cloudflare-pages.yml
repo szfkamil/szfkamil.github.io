@@ -1,0 +1,40 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build CSS
+        run: npx --yes sass@1.104.1 --style=compressed assets/scss/main.scss assets/css/main.css
+
+      - name: Stage deploy files
+        run: |
+          mkdir -p dist/assets/css
+          cp index.html dist/
+          cp assets/css/main.css dist/assets/css/
+          cp assets/cv.pdf dist/assets/
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ab9d3b60248d5e4b085ce75ced914238
+          projectName: kamilzwoinski
+          directory: dist
+          branch: main
+          wranglerVersion: '3'
